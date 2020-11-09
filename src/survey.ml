@@ -32,12 +32,12 @@ let question_to_js q =
     Multiple ->
       printf "  item = form.addMultipleChoiceItem();\n" ;
       printf "  item.setTitle(%S);\n" q.text;
-      printf "  item.setRequired(true);";
+(*      printf "  item.setRequired(true);"; *)
       choices_to_js q.choices;
   | Checkbox (free_form, limit) ->
       printf "  item = form.addCheckboxItem();\n";
       printf "  item.setTitle(%S);" q.text;
-      printf "  item.setRequired(true);";
+(*      printf "  item.setRequired(true);"; *)
       choices_to_js q.choices;
       if free_form then
         printf "  item.showOtherOption(true);\n";
